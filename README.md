@@ -1,31 +1,14 @@
-# zsh iTerm Touchbar
+# zsh iTerm history touchbar
 
-> Display feedback of terminal in the 🍏 Touchbar
+> Display terminal history in the Touchbar
 
-![preview1](./preview1.jpg)
-
-![preview2](./preview2.gif)
-
-Currently it shows:
-
-  * F1 - Current directory 👉
-  * F2 - Current git branch, press to display all branches and switch between them 🎋
-  * F3 - Current git repo status 🔥 / 🙌
-    * `+` — uncommitted changes in the index;
-    * `!` — unstaged changes;
-    * `?` — untracked changes;
-    * `$` — stashed changes;
-    * `⇣` — unpulled commits;
-    * `⇡` — unpushed commits.
-  * F4 - Push to origin branch (git push origin [branch]) ✉️
-  * F5 - Display `npm-run` or `yarn-run` scripts from `package.json` ⚡️ /🐱
+Displays the first word of the past 15 entries, sorted and uniqufied in the touch bar, bound to function keys. Touching any entry will print the shortened to your command line to be executed or autocompleted.
 
 ### Requirements
 
 * iTerm2 3.1.beta.3 (OS 10.10+) - [Download](https://www.iterm2.com/downloads.html)
 * [zsh](http://www.zsh.org/) shell
 * a zsh-framework like [antigen](http://antigen.sharats.me/) or [zgen](https://github.com/tarjoilija/zgen)
-* node (`brew install node`)
 
 **Into iterm2:** Go into `View -> Customize Tool Bar...` and drag & drop the `Fn` module
 
@@ -36,12 +19,12 @@ Currently it shows:
 Clone the repo in your plugins directory:
 
 * `$ cd ${ZSH_CUSTOM1:-$ZSH/custom}/plugins`
-* `$ git clone https://github.com/iam4x/zsh-iterm-touchbar.git`
+* `$ git clone https://github.com/grrowl/zsh-iterm-touchbar-history.git`
 
 Then add the plugin into your `~/.zshrc`:
 
 ```
-plugins=(... zsh-iterm-touchbar)
+plugins=(... zsh-iterm-touchbar-history)
 ```
 
 #### For antigen users
@@ -49,7 +32,7 @@ plugins=(... zsh-iterm-touchbar)
 Add the following snippet `~/.zshrc` after the line antigen use oh-my-zsh:
 
 ```
-antigen theme https://github.com/iam4x/zsh-iterm-touchbar
+antigen theme https://github.com/grrowl/zsh-iterm-touchbar-history
 ```
 
 #### For Zgen users
@@ -57,31 +40,21 @@ antigen theme https://github.com/iam4x/zsh-iterm-touchbar
 Add the following line to your `~/.zshrc` where you're adding your other zsh plugins:
 
 ```
-zgen load iam4x/zsh-iterm-touchbar
+zgen load grrowl/zsh-iterm-touchbar-history
 ```
 
 ### Customize
 
-ENV variables to enable or disable git:
+Change the number of entries to look at:
 
 ```shell
-TOUCHBAR_GIT_ENABLED=true
-```
-ENV variables for git icons:
-
-```shell
-GIT_UNCOMMITTED="+"
-GIT_UNSTAGED="!"
-GIT_UNTRACKED="?"
-GIT_STASHED="$"
-GIT_UNPULLED="⇣"
-GIT_UNPUSHED="⇡"
+HISTORY_NUM="30"
 ```
 
-ENV variables to enable or disable yarn:
+Change the maximum length of a displayed entry:
 
 ```shell
-YARN_ENABLED=true
+HISTORY_TRUNC="15"
 ```
 
 ### Read more / Credits
