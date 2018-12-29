@@ -12,6 +12,10 @@ Displays the first word of the past 15 entries, sorted and uniqufied in the touc
 
 **Into iterm2:** Go into `View -> Customize Tool Bar...` and drag & drop the `Fn` module
 
+Here's what mine looks like:
+
+![](touchbar-history.png)
+
 ### Installing plugin
 
 #### For oh-my-zsh users
