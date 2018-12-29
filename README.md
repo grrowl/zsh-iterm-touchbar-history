@@ -64,4 +64,4 @@ HISTORY_TRUNC="15"
 ### Read more / Credits
 
 * [Original iTerm2 issue for TouchBar support](https://gitlab.com/gnachman/iterm2/issues/5281)
-* [Thank's to spaceship-zsh-theme for git functions](https://github.com/denysdovhan/spaceship-zsh-theme/blob/9dbaee2cc6cfe0ac407cf901ebb97894ed279660/spaceship.zsh#L143-L173)
+* [ZSH iTerm touchbar](https://github.com/iam4x/zsh-iterm-touchbar) which this code is based on
